@@ -10,7 +10,7 @@ from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 
 
-data_dir = r"D:\PycharmProjects\Blood\Data_Blood_Nude"
+data_dir = r"D:\PycharmProjects\Blood\Data"
 categories = ["blood", "noblood"]
 
 X, y = [], []
