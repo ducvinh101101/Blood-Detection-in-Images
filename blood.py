@@ -3,6 +3,7 @@ import cv2
 import numpy as np
 import tensorflow as tf
 from keras.src.applications.vgg16 import VGG16
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 from tensorflow.keras.applications import EfficientNetB0
 from tensorflow.keras.layers import GlobalAveragePooling2D, Dense, Dropout
 from tensorflow.keras.models import Model
@@ -10,7 +11,7 @@ from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 
 
-data_dir = r"D:\PycharmProjects\Blood\Data"
+data_dir = "Data"
 categories = ["blood", "noblood"]
 
 X, y = [], []
@@ -62,6 +63,10 @@ model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy']
 
 history = model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=10, batch_size=32)
 
+y_pred = model.predict(X_test)
+y_pred_classes = (y_pred>0.5).astype(int)
+y_test_classes = y_test.astype(int)
+
 # Vẽ biểu đồ accuracy
 plt.figure(figsize=(10, 5))
 plt.plot(history.history['accuracy'], label='Train Accuracy')
@@ -82,4 +87,12 @@ plt.ylabel('Loss')
 plt.legend()
 plt.show()
 
+cm = confusion_matrix(y_test_classes, y_pred_classes)
+disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=categories)
+plt.figure(figsize=(8, 8))
+disp.plot(cmap=plt.cm.Blues)
+plt.title('Confusion Matrix')
+plt.show()
+
+# Lưu model
 model.save("blood.h5")
