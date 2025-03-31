@@ -1,0 +1,14 @@
+train: D:/PycharmProjects/Blood/datasetyolo/train/images
+val: D:/PycharmProjects/Blood/datasetyolo/valid/images
+test: D:/PycharmProjects/Blood/datasetyolo/test/images
+
+
+nc: 2
+names: ['blood', 'flood']
+
+roboflow:
+  workspace: blood-u8rnv
+  project: b2-cm8xg-outea
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/blood-u8rnv/b2-cm8xg-outea/dataset/2
