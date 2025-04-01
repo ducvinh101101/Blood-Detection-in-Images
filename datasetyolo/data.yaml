@@ -1,6 +1,6 @@
-train: D:/PycharmProjects/Blood/datasetyolo/train/images
-val: D:/PycharmProjects/Blood/datasetyolo/valid/images
-test: D:/PycharmProjects/Blood/datasetyolo/test/images
+train: D:/user/Desktop/Github/Blood-Detection-in-Images/datasetyolo/train/images
+val: D:/user/Desktop/Github/Blood-Detection-in-Images/datasetyolo/valid/images
+test: D:/user/Desktop/Github/Blood-Detection-in-Images/datasetyolo/test/images
 
 
 nc: 2
