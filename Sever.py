@@ -112,7 +112,7 @@ def process_image(image_path, yolo_model_path, vgg_model_path):
     return output_path
 # Sử dụng code
 if __name__ == "__main__":
-    image_path = "Data/blood/stock-photo-angry-adult-naked-woman-blood-skin-isolated-white-domestic-violence.jpg"  # Đường dẫn đến ảnh đầu vào
+    image_path = "Data/noblood/240_F_618723720_TqCZzydHGXV9Ktc46ZWiUy56JavZhu53.jpg"  # Đường dẫn đến ảnh đầu vào
     yolo_model_path = "my_trained_model.pt"
     vgg_model_path = "hyper_blood_3class.h5"
 
